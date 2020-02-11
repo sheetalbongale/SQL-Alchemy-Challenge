@@ -1,5 +1,10 @@
 # Surfs Up!
 
+This challenge is done in 2 steps:
+- Step 1 - Climate Analysis and Exploration [hawaii_climate_analysis](hawaii_climate_analysis.ipynb)
+
+- Step 2 - Climate App using FLASK 
+
 ![surfs-up.jpeg](Images/surfs-up.jpeg)
 
 Congratulations! You've decided to treat yourself to a long holiday vacation in Honolulu, Hawaii! To help with your trip planning, you need to do some climate analysis on the area. The following outlines what you need to do.

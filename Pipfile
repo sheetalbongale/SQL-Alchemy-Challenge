@@ -11,8 +11,8 @@ pandas = "*"
 numpy = "*"
 matplotlib = "*"
 math = "*"
-black = "*"
 blackcellmagic = "*"
+black = "*"
 sqlalchemy = "*"
 
 [requires]
