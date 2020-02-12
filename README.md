@@ -1,13 +1,13 @@
-## SQLAlchemy and Flask Challenge - Surfs Up!
-##### Submitted by : Sheetal Bongale | UT Data Analysis and Visualization | Feb 15, 2020
+# SQLAlchemy and Flask Challenge - Surfs Up!
+#### Submitted by : Sheetal Bongale | UT Data Analysis and Visualization | Feb 15, 2020
 
 ---
 Technologies Used: `SQLAlchemy ORM queries`, `Pandas`, `Matplotlib` and `FLASK`
 
 This challenge is done in 2 steps:
-- Climate Analysis using SQLAlchemy and Python - [hawaii climate_analysis.ipynb](hawaii_climate_analysis.ipynb)
+- Climate Analysis using SQLAlchemy and Python - [hawaii_climate_analysis.ipynb](hawaii_climate_analysis.ipynb)
 
-- Design a Flask API Web Climate App - [Climate.py](Climate.py)
+- Design a Flask API Web Climate App - [ClimateApp.py](ClimateApp.py)
 
 - - -
 ## Step 1 - Climate Analysis and Exploration
