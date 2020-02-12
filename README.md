@@ -1,20 +1,15 @@
-# Surfs Up! 
-SQLAlchemy and FLASK Challenge | Submitted by: Sheetal Bongale
-UT Data Analysis & Visualization Bootcamp | Feb 13, 2020
+## SQLAlchemy and Flask Challenge - Surfs Up!
+##### Submitted by : Sheetal Bongale | UT Data Analysis and Visualization | Feb 15, 2020
+
 ---
-
-This challenge is done in 2 steps:
-- Step 1 - Climate Analysis and Exploration using SQLAlchemy and Python - [hawaii_climate_analysis](hawaii_climate_analysis.ipynb)
-
-- Step 2 - Design a Flask API Web Climate App
-
 Technologies Used: `SQLAlchemy ORM queries`, `Pandas`, `Matplotlib` and `FLASK`
 
+This challenge is done in 2 steps:
+- Climate Analysis using SQLAlchemy and Python - [hawaii climate_analysis.ipynb](hawaii_climate_analysis.ipynb)
 
-![surfs-up.jpeg](Images/surfs-up.jpeg)
+- Design a Flask API Web Climate App - [Climate.py](Climate.py)
 
-Congratulations! You've decided to treat yourself to a long holiday vacation in Honolulu, Hawaii! To help with your trip planning, you need to do some climate analysis on the area. The following outlines what you need to do.
-
+- - -
 ## Step 1 - Climate Analysis and Exploration
 
 To begin, use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
