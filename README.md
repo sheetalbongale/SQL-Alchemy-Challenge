@@ -1,13 +1,15 @@
-# Surfs Up! SQLAlchemy and FLASK Challenge
-#### Submitted by: Sheetal Bongale
-#### UT Data Analysis & Visualization Bootcamp | Feb 13, 2020
+# Surfs Up! 
+SQLAlchemy and FLASK Challenge | Submitted by: Sheetal Bongale
+UT Data Analysis & Visualization Bootcamp | Feb 13, 2020
+---
 
 This challenge is done in 2 steps:
-- Step 1 - Climate Analysis and Exploration using SQLAlchemy and Python. Find[hawaii_climate_analysis](hawaii_climate_analysis.ipynb)
+- Step 1 - Climate Analysis and Exploration using SQLAlchemy and Python - [hawaii_climate_analysis](hawaii_climate_analysis.ipynb)
 
 - Step 2 - Design a Flask API Web Climate App
 
-** Technologies Used:** SQLAlchemy ORM queries, Pandas, and Matplotlib, FLASK
+Technologies Used: `SQLAlchemy ORM queries`, `Pandas`, `Matplotlib` and `FLASK`
+
 
 ![surfs-up.jpeg](Images/surfs-up.jpeg)
 
