@@ -1,7 +1,6 @@
 # SQLAlchemy and Flask Challenge - Surfs Up!
 #### Submitted by : Sheetal Bongale | UT Data Analysis and Visualization | Feb 15, 2020
 
----
 Technologies Used: `SQLAlchemy ORM queries`, `Pandas`, `Matplotlib` and `FLASK`
 
 This challenge is done in 2 steps:
