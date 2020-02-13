@@ -2,7 +2,7 @@
 #### Submitted by : Sheetal Bongale | UT Data Analysis and Visualization | Feb 15, 2020
 
 
-Technologies Used: `SQLAlchemy ORM queries`, `Pandas`, `Matplotlib` and `FLASK`
+Technologies Used: `SQLAlchemy`, `Pandas`, `Matplotlib` and `FLASK`
 
 This challenge is done in 2 steps:
 - Climate Analysis using SQLAlchemy and Python - [hawaii_climate_analysis.ipynb](hawaii_climate_analysis.ipynb)
@@ -13,8 +13,6 @@ This challenge is done in 2 steps:
 ## Step 1 - Climate Analysis and Exploration
 
 To begin, use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
-
-* Use the provided [starter notebook](climate_starter.ipynb) and [hawaii.sqlite](Resources/hawaii.sqlite) files to complete your climate analysis and data exploration.
 
 * Choose a start date and end date for your trip. Make sure that your vacation range is approximately 3-15 days total.
 
@@ -52,7 +50,7 @@ To begin, use Python and SQLAlchemy to do basic climate analysis and data explor
 
   * Filter by the station with the highest number of observations.
 
-  * Plot the results as a histogram with `bins=12`.
+* Plot the results as a histogram with `bins=12`.
 
 ### Temperature Analysis
 

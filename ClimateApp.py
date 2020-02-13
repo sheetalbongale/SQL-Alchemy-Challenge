@@ -1,10 +1,13 @@
-from flask import Flask , jsonify
+from flask import Flask , jsonify, resuest, render_template
 import sqlalchemy
 from sqlalchemy import create_engine, func
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, scoped_session, sessionmaker
 from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import scoped_session, sessionmaker
 import datetime as dt
 #######################################################
 #                 Database Setup
 #######################################################
+
+app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///Resources/hawaii.sqlite"
+db = SQLAlchemy(app)
