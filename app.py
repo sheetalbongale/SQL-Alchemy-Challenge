@@ -4,7 +4,7 @@
 # This script will return JSONified query results from API endpoints and 
 # serve the queries with Flask. 
 #########################################################################################
-from flask import Flask , jsonify
+from flask import Flask , jsonify, render_template
 import sqlalchemy
 from sqlalchemy import create_engine, func
 from sqlalchemy.orm import Session
@@ -42,40 +42,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def Home():
-    """List all available api routes."""
-    return ('''
-    <html>
-         <div class="right">
-            <h1>Welcome to Surf's Up! Hawai'i Climate API!</h1>
-                <br>
-                    <li>
-                        List of stations from the dataset:
-                            <a href= '/api/v1.0/stations'> Stations</a>
-                    </li>
-                <br>
-                    <li>
-                        The precipitation observations for the previous year:
-                            <a href= '/api/v1.0/precipitation'> Precipitation Records</a>
-                    </li>
-                <br>
-                    <li>
-                        List of Temperature Observations (tobs) for the previous year:
-                            <a href= '/api/v1.0/tobs'> Last Year's Temperature Records</a>
-                    </li>
-        
-                <br>
-                    <li>
-                        Records for the minimum, average and the maximum temperatures for a given start date (year-month-date):
-                            <a href="/api/v1.0/2016-12-23"> Temperature Records from Start Date 2016-12-23</a>
-                    </li>
-                <br>
-                    <li>
-                        Records for the minimum, average and the maximum temperatures for a given start and end date (year-month-date):
-                            <a href="/api/v1.0/2016-12-06/2016-12-13"> Temperature Records from Start Date 2016-12-06 and End Date 2016-12-13</a>
-        
-                    </li>
-    ''')
-
+    return render_template("index.html")
+ 
 def calc_temps(start_date, end_date):
     """TMIN, TAVG, and TMAX for a list of dates.
     
