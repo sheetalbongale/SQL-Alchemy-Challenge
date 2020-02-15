@@ -66,12 +66,12 @@ def Home():
                 <br>
                     <li>
                         Records for the minimum, average and the maximum temperatures for a given start date (year-month-date):
-                            <a href= '/api/v1.0/<start>'> Last Year's Temperature Records</a>
+                            <a href="/api/v1.0/2016-12-23"> Temperature Records from Start Date 2016-12-23</a>
                     </li>
                 <br>
                     <li>
                         Records for the minimum, average and the maximum temperatures for a given start and end date (year-month-date):
-                            <a href= '/api/v1.0/<start>/<end>'> Last Year's Temperature Records</a>
+                            <a href="/api/v1.0/2016-12-06/2016-12-13"> Temperature Records from Start Date 2016-12-06 and End Date 2016-12-13</a>
         
                     </li>
     ''')
@@ -86,7 +86,8 @@ def calc_temps(start_date, end_date):
     Returns:
         TMIN, TAVE, and TMAX
     """
-    
+    session = Session(engine)
+
     return session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
         filter(Measurement.date >= start_date).filter(Measurement.date <= end_date).all()
 
@@ -94,6 +95,7 @@ def calc_temps(start_date, end_date):
 last_date = session.query(Measurement.date).order_by(Measurement.date.desc()).first()[0]
 last_date = dt.datetime.strptime(last_date, "%Y-%m-%d")
 last_year = last_date - dt.timedelta(days=365)
+
 
 @app.route("/api/v1.0/precipitation")
 def precipitation():
@@ -141,8 +143,6 @@ def tobs():
 def start(start):
     """Returns the JSON list of the minimum, average and the maximum temperatures for a given start date (year-month-date)"""
 
-    session = Session(engine)
-
     temps = calc_temps(start, last_date)
 
     # Create a list to store the temperature records
@@ -158,8 +158,6 @@ def start(start):
 @app.route("/api/v1.0/<start>/<end>")
 def start_end(start, end):
     """Returns the JSON list of the minimum, average and the maximum temperatures for a given start date and end date(year-month-date)"""
-
-    session = Session(engine)
 
     temps = calc_temps(start, end)
 
