@@ -43,23 +43,38 @@ app = Flask(__name__)
 @app.route("/")
 def Home():
     """List all available api routes."""
-    return (
-        f"Welcome to Surf's Up! Hawai'i Climate API!<br/>"
-        f"______________________________________________<br/>"
-        f"Available Routes -<br/>"
-        f"List of stations from the dataset:<br/>"
-        f"/api/v1.0/stations<br/>"
-        f"The precipitation observations for the previous year:<br/>"
-        f"/api/v1.0/precipitation<br/>"
-        f"List of Temperature Observations (tobs) for the previous year:<br/>"
-        f"/api/v1.0/tobs<br/>"
-        f"______________________________________________<br/>"
-        f"Records for the minimum, average and the maximum temperatures for a given start date (year-month-date):<br/>"
-        f"/api/v1.0/<start><br/>"
-        f"Records for the minimum, average and the maximum temperatures for a given start and end date (year-month-date):<br/>"
-        f"/api/v1.0/<start>/<end><br/>"
-        f"______________________________________________<br/>"
-    )
+    return ('''
+    <html>
+         <div class="right">
+            <h1>Welcome to Surf's Up! Hawai'i Climate API!</h1>
+                <br>
+                    <li>
+                        List of stations from the dataset:
+                            <a href= '/api/v1.0/stations'> Stations</a>
+                    </li>
+                <br>
+                    <li>
+                        The precipitation observations for the previous year:
+                            <a href= '/api/v1.0/precipitation'> Precipitation Records</a>
+                    </li>
+                <br>
+                    <li>
+                        List of Temperature Observations (tobs) for the previous year:
+                            <a href= '/api/v1.0/tobs'> Last Year's Temperature Records</a>
+                    </li>
+        
+                <br>
+                    <li>
+                        Records for the minimum, average and the maximum temperatures for a given start date (year-month-date):
+                            <a href= '/api/v1.0/<start>'> Last Year's Temperature Records</a>
+                    </li>
+                <br>
+                    <li>
+                        Records for the minimum, average and the maximum temperatures for a given start and end date (year-month-date):
+                            <a href= '/api/v1.0/<start>/<end>'> Last Year's Temperature Records</a>
+        
+                    </li>
+    ''')
 
 def calc_temps(start_date, end_date):
     """TMIN, TAVG, and TMAX for a list of dates.
@@ -85,6 +100,8 @@ def precipitation():
     """Return a dictionary in JSON format where the date is the key and the value is 
     the precipitation data"""
 
+    session = Session(engine)
+
     # Perform a query to retrieve the data and precipitation scores
     prcp_results = ( 
         session.query(Measurement.date, Measurement.prcp)
@@ -93,30 +110,39 @@ def precipitation():
         .all()
     )
     # Save the query results as a dictionary with the date as the key and the prcp record as the value
-    # Return converted JSON
-    return jsonify(dict(prcp_results))
+    # Return the valid JSON response object
+    return jsonify(prcp_results)
 
 @app.route("/api/v1.0/stations")
 def stations():
     """Return a list of stations"""
+
+    session = Session(engine)
+
     stations_results = session.query(Station.station).all()
 
-    return jsonify(dict(stations_results))
+    return jsonify(stations_results)
 
 @app.route("/api/v1.0/tobs")
 def tobs():
     """Return a JSON list of temperature observations for the previous year"""
+
+    session = Session(engine)
+
     temp_results = (
         session.query(Measurement.date, Measurement.tobs)
         .filter(Measurement.date > last_year)
         .order_by(Measurement.date)
         .all()
     )
-    return jsonify(dict(temp_results))
+    return jsonify(temp_results)
 
 @app.route("/api/v1.0/<start>")
 def start(start):
     """Returns the JSON list of the minimum, average and the maximum temperatures for a given start date (year-month-date)"""
+
+    session = Session(engine)
+
     temps = calc_temps(start, last_date)
 
     # Create a list to store the temperature records
@@ -132,6 +158,8 @@ def start(start):
 @app.route("/api/v1.0/<start>/<end>")
 def start_end(start, end):
     """Returns the JSON list of the minimum, average and the maximum temperatures for a given start date and end date(year-month-date)"""
+
+    session = Session(engine)
 
     temps = calc_temps(start, end)
 

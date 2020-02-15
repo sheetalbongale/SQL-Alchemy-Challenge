@@ -64,7 +64,7 @@ To begin, use Python and SQLAlchemy to do basic climate analysis and data explor
 
   * Use the peak-to-peak (tmax-tmin) value as the y error bar (yerr).
 
-    ![temperature](Images/temperature.png)
+    ![temperature](static/temperature.png)
 
 ### Daily Rainfall Average.
 
@@ -80,7 +80,7 @@ To begin, use Python and SQLAlchemy to do basic climate analysis and data explor
 
 * Use Pandas to plot an area plot (`stacked=False`) for the daily normals.
 
-  ![daily-normals](Images/daily_normals.png)
+  ![daily-normals](static/daily_normals.png)
   
 - - -
 
