@@ -1,6 +1,9 @@
 # SQLAlchemy and Flask Challenge - Surfs Up!
 #### Submitted by : Sheetal Bongale | UT Data Analysis and Visualization | Feb 15, 2020
 
+Objective: 
+- Use Python and SQLAlchemy ORM queries with provided [hawaii.sqlite](Resources/hawaii.sqlite) to reflect tables into a new model and perform analysis of Hawaii climate.
+- Build a Flask Web app using the served queries that will return JSONified query results from API endpoints.
 
 Technologies Used: `SQLAlchemy`, `Pandas`, `Matplotlib` and `FLASK`
 
