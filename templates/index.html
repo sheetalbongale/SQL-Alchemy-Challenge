@@ -6,7 +6,8 @@
     <body>
         
         <h1><b><center>Welcome to Surf's Up! Hawai'i Climate API</center></b></h1>
-        <p><center><img src="../static/surfs-up.jpeg" height=400 width=1100 ></center></p>
+        <center><img src="../static/surfs-up.jpeg" height=300 width=1000 ></center>
+        <h4>    
             <br>
                 <li>
                     List of stations from the dataset:
@@ -25,18 +26,28 @@
     
             <br>
                 <li>
-                    Records for the minimum, average and the maximum temperatures for a given start date (year-month-date):
-                        <a href="/api/v1.0/2016-12-23"> Temperature Records for the required Dates</a>
+                    Records for the minimum, average and the maximum temperatures for a start date (YYYY-MM-DD):
+                        <a href="/api/v1.0/2016-12-23"> Temperature Records for a Date Range</a>
                 </li>
             <br>
                 <li>
-                    Records for the minimum, average and the maximum temperatures for a given start and end date (YYYY-month-date):
-                        <a href="/api/v1.0/2016-12-06/2016-12-13"> Temperature Records for the Date Range</a>
+                    Records for the minimum, average and the maximum temperatures for a start and end date (Enter date in YYYY-MM-DD format):<br>
+                    <br>    
+                        <form action="/api/v1.0" target="_blank" method="GET">
+                            &ensp; Start Date:
+                                <input type="text" name="Start Date" value="2016-12-06">
+                            <br>
+                            &ensp; End Date:
+                                <input type="text" name="End Date" value="2016-12-24">
+                            <br>
+                            &ensp;<input type="submit" value="Submit" style="font-size: medium; background-color: cyan">
+                        </form>
                 </li>
-                <ul>
-                    <p>Data is limited to dates 2010/01/01 through 2017/08/17</p>
-                    <p>Units - Preciptation: mm; Temperature: <span>&#8457;</span> </p>
-                    
+            </h4>
+                <ul style="list-style-type:none;">
+                    <li>Date format is YYYY-MM-DD</li>
+                    <li>Data is limited to dates 2010/01/01 through 2017/08/17</li>
+                    <li>Units - Preciptation: mm; Temperature: <span>&#8457;</span> </li>   
                 </ul>
     </body>
 </html>
