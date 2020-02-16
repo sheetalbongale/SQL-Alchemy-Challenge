@@ -1,48 +1,51 @@
 <html>
     <head>
         <title>Hawaii Climate App</title>
-
+        <style>
+            img { 
+              width: 100%; 
+            }
+        </style>
     </head>
     <body>
-        
-        <h1><b><center>Welcome to Surf's Up! Hawai'i Climate API</center></b></h1>
-        <center><img src="../static/surfs-up.jpeg" height=300 width=1000 ></center>
+        <h1><center>Welcome to Surf's Up! Hawai'i Climate API</center></h1>
+        <center><img src="../static/surfs-up.jpeg" style="height:320px; width:1000px;" ></center>
+            
         <h4>    
+            <li>
+                List of stations from the dataset:
+                    <a href= '/api/v1.0/stations'> Stations</a>
+            </li>
             <br>
-                <li>
-                    List of stations from the dataset:
-                        <a href= '/api/v1.0/stations'> Stations</a>
-                </li>
+            <li>
+                The precipitation observations for the previous year:
+                    <a href= '/api/v1.0/precipitation'> Precipitation Records</a>
+            </li>
             <br>
-                <li>
-                    The precipitation observations for the previous year:
-                        <a href= '/api/v1.0/precipitation'> Precipitation Records</a>
-                </li>
-            <br>
-                <li>
-                    List of Temperature Observations (tobs) for the previous year:
-                        <a href= '/api/v1.0/tobs'> Last Year's Temperature Records</a>
-                </li>
+            <li>
+                List of Temperature Observations (tobs) for the previous year:
+                    <a href= '/api/v1.0/tobs'> Last Year's Temperature Records</a>
+            </li>
     
             <br>
-                <li>
-                    Records for the minimum, average and the maximum temperatures for a start date (YYYY-MM-DD):
-                        <a href="/api/v1.0/2016-12-23"> Temperature Records for a Date Range</a>
-                </li>
+            <li>
+                Records for the minimum, average and the maximum temperatures for a start date (YYYY-MM-DD):
+                    <a href="/api/v1.0/2016-12-23"> Temperature Records for a Date Range</a>
+            </li>
             <br>
-                <li>
-                    Records for the minimum, average and the maximum temperatures for a start and end date (Enter date in YYYY-MM-DD format):<br>
-                    <br>    
-                        <form action="/api/v1.0" target="_blank" method="GET">
-                            &ensp; Start Date:
-                                <input type="text" name="Start Date" value="2016-12-06">
-                            <br>
-                            &ensp; End Date:
-                                <input type="text" name="End Date" value="2016-12-24">
-                            <br>
-                            &ensp;<input type="submit" value="Submit" style="font-size: medium; background-color: cyan">
-                        </form>
-                </li>
+            <li>
+                Records for the minimum, average and the maximum temperatures for a start and end date (Enter date in YYYY-MM-DD format):<br>
+                <br>    
+                    <form action="/api/v1.0" target="_blank" method="GET">
+                        &ensp; Start Date:
+                            <input type="text" name="Start Date" value="2016-12-06">
+                        <br>
+                        &ensp; End Date:
+                            <input type="text" name="End Date" value="2016-12-24">
+                        <br>
+                        &ensp;<input type="submit" value="Submit" style="font-size: medium; background-color: cyan">
+                    </form>
+            </li>
             </h4>
                 <ul style="list-style-type:none;">
                     <li>Date format is YYYY-MM-DD</li>
