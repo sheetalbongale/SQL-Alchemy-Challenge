@@ -4,7 +4,7 @@
 # This script will return JSONified query results from API endpoints and
 # serve the queries with Flask to enable a Climate Web App.
 #########################################################################################
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 import sqlalchemy
 from sqlalchemy import create_engine, func
 from sqlalchemy.ext.automap import automap_base
@@ -144,12 +144,14 @@ def start(start):
     return jsonify(temp_list)
 
 
-@app.route("/api/v1.0/<start>/<end>")
-def start_end(start, end):
+@app.route("/api/v1.0")
+def start_end():
     """Returns the JSON list of the minimum, average and the maximum temperatures for a given start date and end date(YYYY-MM-DD)"""
+    start = request.args.get("Start Date")
+    end = request.args.get("End Date")
+
 
     temps = calc_temps(start, end)
-
     # Create a list to store the temperature records
     temp_list = []
     date_dict = {"Start Date": start, "End Date": end}
@@ -163,7 +165,6 @@ def start_end(start, end):
     temp_list.append(
         {"Observation": "Maximum Temperature", "Temperature(F)": temps[0][2]}
     )
-
     return jsonify(temp_list)
 
 
